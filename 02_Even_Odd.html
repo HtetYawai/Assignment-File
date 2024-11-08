@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class NumberChecker {
+    constructor() { }
+
+    // Polymorphic function to check if numbers are odd or even
+    checkOddEven(input) {
+        if (Array.isArray(input)) {
+            return input.map (item => this.checkOddEven(item));
+        }
+        if (typeof input == "number") {
+            if (input % 2 == 0) {
+                return "Even"
+            }
+            else {
+                return "Odd"
+            }
+        }
+        return "Invalid input"
+    }
+}
+
+// Instructor's test cases
+// ===== ===== ===== ===== =====
+
+const numberChecker = new NumberChecker();
+
+console.log(numberChecker.checkOddEven(5));
+// Expected Output: Odd
+console.log(numberChecker.checkOddEven(10));
+// Expected Output: Even
+console.log(numberChecker.checkOddEven([3, 5, 7, 10]));
+// Expected Output: ['Odd', 'Odd', 'Odd', 'Even']
+console.log(numberChecker.checkOddEven('Hello'));
+// Expected Output: Invalid input
+    </script>
+</body>
+</html>
