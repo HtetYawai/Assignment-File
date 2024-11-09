@@ -10,7 +10,7 @@
         // chain logic
 function isLeapYear_LogicChain(year) {
     // use and operators && or operators || 
-    return year % 4 == 0 && (year % 100 !== 0 || year % 400 !== 0) ? "a leap year" : "not a leap year";
+    return year % 4 == 0 && (year % 100 !== 0 || year % 400 == 0) ? "a leap year" : "not a leap year";
 }
 
 // nested function
